@@ -1,0 +1,11 @@
+<launch>
+  <arg name="debug" default="false"/>
+
+  <node name="got_contact_condition" pkg="contact_nodes" type="got_contact_condition" output="screen"/>
+  <node name="has_grasp_condition" pkg="contact_nodes" type="has_grasp_condition" output="screen">
+    <param name="fail_threshold" value="0.95"/>
+  </node>
+  <node name="no_slippage_condition" pkg="contact_nodes" type="no_slippage_condition" output="screen">
+    <param name="fail_threshold" value="0.95"/>
+  </node>
+</launch>

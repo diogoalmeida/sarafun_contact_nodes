@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>contact_nodes</name>
+  <version>0.1.0</version>
+  <description>Package with demo implementations for a reactive BT</description>
+  <maintainer email="diogoa@kth.se">Diogo Almeida</maintainer>
+  <author>Diogo Almeida</author>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>actionlib</depend>
+  <depend>actionlib_msgs</depend>
+  <depend>rospy</depend>
+  <depend>sarafun_msgs</depend>
+  <depend>behavior_tree_leaves</depend>
+
+</package>
