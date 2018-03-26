@@ -10,12 +10,12 @@ class HasGraspCondition : ConditionTemplate{
 public:
 	HasGraspCondition(std::string node_name, std::string bt_name) : ConditionTemplate(bt_name)
   {
-      ros::NodeHandle nh("~");
+      nh_ = ros::NodeHandle("~");
 
-      if (!nh.getParam("fail_threshold", fail_threshold_))
+      if (!nh_.getParam("fail_threshold", fail_threshold_))
       {
         ROS_WARN("Missing fail_threshold parameter, using default");
-        fail_threshold_ = 0.9;
+        fail_threshold_ = 0.75;
       }
   }
 
@@ -25,6 +25,7 @@ public:
 
 private:
   std::default_random_engine generator_;
+	ros::NodeHandle nh_;
   double fail_threshold_;
 };
 }

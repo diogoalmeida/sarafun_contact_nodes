@@ -1,5 +1,16 @@
 <launch>
   <arg name="debug" default="false"/>
+  <param name="/sarafun/bt/tick_period" type="int" value="500"/> <!-- Tick period in milisseconds -->
+  <param name="/sarafun/bt/running" type="bool" value="true"/> <!-- Immediately start the behavior tree -->
+  <rosparam command="load" file="$(find contact_nodes)/config/action_nodes_config.yaml"/>
+
+  <group if="$(arg debug)" >
+    <node name="tree" pkg="sarafun_tree" type="sarafun_bt" output="screen" launch-prefix="xterm -e gdb --args"/>
+  </group>
+
+  <group unless="$(arg debug)">
+    <node name="tree" pkg="sarafun_tree" type="sarafun_bt" output="screen"/>
+  </group>
 
   <node name="got_contact_condition" pkg="contact_nodes" type="got_contact_condition" output="screen"/>
   <node name="has_grasp_condition" pkg="contact_nodes" type="has_grasp_condition" output="screen">
@@ -8,4 +19,5 @@
   <node name="no_slippage_condition" pkg="contact_nodes" type="no_slippage_condition" output="screen">
     <param name="fail_threshold" value="0.95"/>
   </node>
+
 </launch>

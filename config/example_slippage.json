@@ -1,0 +1,66 @@
+{
+  "root": "sequence1",
+  "nodes": {
+    "sequence1": {
+      "id": "sequence1",
+      "type": "Sequence",
+      "name": "Sequence",
+      "children": [
+		      "selector1",
+		      "selector2"
+      ]
+    },
+    "selector1": {
+      "id": "selector1",
+      "type": "Selector",
+      "name": "Selector",
+      "children": [
+        "has_grasp_condition",
+        "pickup_action"
+      ]
+    },
+    "selector2": {
+      "id": "selector2",
+      "type": "Selector",
+      "name": "Selector",
+      "children": [
+        "got_contact_condition",
+        "sequence2"
+      ]
+    },
+    "sequence2": {
+      "id": "sequence2",
+      "type": "Sequence",
+      "name": "Sequence",
+      "children": [
+		      "no_slippage_condition",
+	        "contact_action"
+      ]
+    },
+    "pickup_action": {
+      "id": "pickup_action",
+      "type": "Action",
+      "name": "pickup_action"
+    },
+    "has_grasp_condition": {
+      "id": "has_grasp_condition",
+      "type": "Condition",
+      "name": "has_grasp_condition"
+    },
+    "got_contact_condition": {
+      "id": "got_contact_condition",
+      "type": "Condition",
+      "name": "got_contact_condition"
+    },
+    "no_slippage_condition": {
+      "id": "no_slippage_condition",
+      "type": "Condition",
+      "name": "no_slippage_condition"
+    },
+    "contact_action": {
+      "id": "contact_action",
+      "type": "Action",
+      "name": "contact_action"
+    }
+  }
+}

@@ -24,6 +24,7 @@ class ContactServer:
             rospy.sleep(0.1)
 
         rospy.loginfo("Contact server succeeded")
+        rospy.set_param_raw("/pick/succeeded", False) # To "reset" the tree logic
         self.server.set_succeeded()
 
 if __name__ == "__main__":
