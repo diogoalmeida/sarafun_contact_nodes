@@ -9,6 +9,8 @@ bool NoSlippageCondition::conditionEvaluation() {
 
     if (draw > fail_threshold_)
     {
+      ROS_WARN("Detected slippage!");
+      ros::param::set("/pick/succeeded", false);
       return false;
     }
 

@@ -45,17 +45,17 @@
     "has_grasp_condition": {
       "id": "has_grasp_condition",
       "type": "Condition",
-      "name": "has_grasp_condition"
+      "name": "HasGraspCondition"
     },
     "got_contact_condition": {
       "id": "got_contact_condition",
       "type": "Condition",
-      "name": "got_contact_condition"
+      "name": "GotContactCondition"
     },
     "no_slippage_condition": {
       "id": "no_slippage_condition",
       "type": "Condition",
-      "name": "no_slippage_condition"
+      "name": "NoSlippageCondition"
     },
     "contact_action": {
       "id": "contact_action",

@@ -7,28 +7,24 @@ bool HasGraspCondition::conditionEvaluation() {
     bool grasped;
     if (!nh_.getParam("/pick/succeeded", grasped))
     {
+      ROS_ERROR("Missing /pick/succeeded parameter");
       grasped = false;
     }
 
     double draw = distribution(generator_);
-    ROS_INFO("Draw: %.2f", draw);
 
     if (grasped)
     {
       if (draw > fail_threshold_)
       {
+        ROS_WARN("Lost grasp!");
         return false;
       }
 
       return true;
     }
 
-    if (draw < fail_threshold_)
-    {
-      return false;
-    }
-
-    return true;
+    return false;
 }
 }
 

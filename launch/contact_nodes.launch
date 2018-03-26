@@ -1,6 +1,6 @@
 <launch>
   <arg name="debug" default="false"/>
-  <param name="/sarafun/bt/tick_period" type="int" value="500"/> <!-- Tick period in milisseconds -->
+  <param name="/sarafun/bt/tick_period" type="int" value="4000"/> <!-- Tick period in milisseconds -->
   <param name="/sarafun/bt/running" type="bool" value="true"/> <!-- Immediately start the behavior tree -->
   <rosparam command="load" file="$(find contact_nodes)/config/action_nodes_config.yaml"/>
 
@@ -9,15 +9,19 @@
   </group>
 
   <group unless="$(arg debug)">
-    <node name="tree" pkg="sarafun_tree" type="sarafun_bt" output="screen"/>
+    <node name="tree" pkg="sarafun_tree" type="sarafun_bt" output="log"/>
   </group>
 
   <node name="got_contact_condition" pkg="contact_nodes" type="got_contact_condition" output="screen"/>
   <node name="has_grasp_condition" pkg="contact_nodes" type="has_grasp_condition" output="screen">
-    <param name="fail_threshold" value="0.95"/>
+    <param name="fail_threshold" value="0.9"/>
   </node>
   <node name="no_slippage_condition" pkg="contact_nodes" type="no_slippage_condition" output="screen">
-    <param name="fail_threshold" value="0.95"/>
+    <param name="fail_threshold" value="0.9"/>
   </node>
 
+  <node name="ContactActionClient" pkg="sarafun_tree" type="ContactAction" output="log"/>
+  <node name="PickupActionClient" pkg="sarafun_tree" type="PickupAction" output="log"/>
+  <node name="contact_server" pkg="contact_nodes" type="contact_server.py" output="screen"/>
+  <node name="pick_server" pkg="contact_nodes" type="pick_server.py" output="screen"/>
 </launch>

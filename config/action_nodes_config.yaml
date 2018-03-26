@@ -1,10 +1,10 @@
 sarafun:
   bt_action_nodes:
     contact:
-      action_server_name: /pick_server
+      action_server_name: /contact_server
       bt_client_name: contact_action
-      timeout: 60
+      timeout: 60000
     pickup:
       action_server_name: /pick_server
       bt_client_name: pickup_action
-      timeout: 60
+      timeout: 60000

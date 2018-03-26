@@ -8,7 +8,7 @@ class ContactServer:
     succeed."""
     def __init__(self):
         self.server = actionlib.SimpleActionServer("contact_server", ContactKeyframeAction, self.execute, False)
-        self.action_time = 3.0
+        self.action_time = 10.0
         self.server.start()
 
     def execute(self, goal):
@@ -21,10 +21,11 @@ class ContactServer:
                 self.server.set_preempted()
                 return
 
+            rospy.loginfo_throttle(1, "Running contact")
             rospy.sleep(0.1)
 
         rospy.loginfo("Contact server succeeded")
-        rospy.set_param_raw("/pick/succeeded", False) # To "reset" the tree logic
+        rospy.set_param("/pick/succeeded", False) # To "reset" the tree logic
         self.server.set_succeeded()
 
 if __name__ == "__main__":

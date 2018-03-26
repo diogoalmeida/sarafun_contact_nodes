@@ -3,7 +3,7 @@
 namespace contact_nodes {
 
 bool GotContactCondition::conditionEvaluation() {
-  	return true;
+  	return false;
 }
 }
 
