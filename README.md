@@ -1,4 +1,4 @@
-#Contact nodes demo package
+# Contact nodes demo package
 
 This package illustrates an example scenario of a reactive Behavior Tree (BT) implementation.
 Two actions, "pickup" and "contact" need to be executed in order for a certain
