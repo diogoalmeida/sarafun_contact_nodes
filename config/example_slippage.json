@@ -7,8 +7,14 @@
       "name": "Sequence",
       "children": [
 		      "selector1",
-		      "selector2"
+		      "selector2",
+          "reset_action"
       ]
+    },
+    "reset_action": {
+      "id": "reset_action",
+      "type": "Action",
+      "name": "reset_action"
     },
     "selector1": {
       "id": "selector1",
@@ -25,7 +31,7 @@
       "name": "Selector",
       "children": [
         "got_contact_condition",
-        "sequence2"
+        "contact_action"
       ]
     },
     "sequence2": {

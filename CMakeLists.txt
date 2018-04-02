@@ -6,7 +6,18 @@ find_package(catkin REQUIRED COMPONENTS
   actionlib_msgs
   actionlib
   sarafun_msgs
+  sarafun_tree
   behavior_tree_leaves
+)
+
+add_action_files(FILES
+  ResetKeyframe.action
+)
+
+generate_messages(
+	DEPENDENCIES
+	actionlib_msgs
+	std_msgs
 )
 
 set(CMAKE_CXX_FLAGS "-std=c++11 ${CMAKE_CXX_FLAGS}")
@@ -30,3 +41,6 @@ target_link_libraries(has_grasp_condition ${catkin_LIBRARIES})
 
 add_executable(no_slippage_condition src/contact_nodes/no_slippage_condition.cpp)
 target_link_libraries(no_slippage_condition ${catkin_LIBRARIES})
+
+add_executable(reset_action src/contact_nodes/ResetAction.cpp)
+target_link_libraries(reset_action ${catkin_LIBRARIES})

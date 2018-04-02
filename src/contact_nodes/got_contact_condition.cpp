@@ -3,7 +3,14 @@
 namespace contact_nodes {
 
 bool GotContactCondition::conditionEvaluation() {
-  	return false;
+  bool success = false;
+
+  if(!nh_.getParam("/contact/success", success))
+  {
+    ROS_ERROR("No parameter /contact/success");
+  }
+
+  return success;
 }
 }
 

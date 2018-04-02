@@ -13,6 +13,7 @@
   <depend>actionlib_msgs</depend>
   <depend>rospy</depend>
   <depend>sarafun_msgs</depend>
+  <depend>sarafun_tree</depend>
   <depend>behavior_tree_leaves</depend>
 
 </package>

@@ -8,3 +8,7 @@ sarafun:
       action_server_name: /pick_server
       bt_client_name: pickup_action
       timeout: 60000
+    reset:
+      action_server_name: /reset_state
+      bt_client_name: reset_action
+      timeout: 10

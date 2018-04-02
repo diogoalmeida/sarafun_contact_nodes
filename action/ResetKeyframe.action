@@ -1,0 +1,8 @@
+int32 idx
+---
+int16 result
+int16 SUCCESS=0
+int16 FAILURE=1
+int16 MOTION_FAILED=2
+int16 MISSING_KEYFRAME=3
+---

@@ -7,10 +7,16 @@
 namespace contact_nodes {
 class GotContactCondition : ConditionTemplate{
 public:
-	GotContactCondition(std::string node_name, std::string bt_name) : ConditionTemplate(bt_name){}
+	GotContactCondition(std::string node_name, std::string bt_name) : ConditionTemplate(bt_name)
+	{
+		nh_ = ros::NodeHandle("~");
+	}
+
   ~GotContactCondition() {}
 
   bool conditionEvaluation();
+private:
+	ros::NodeHandle nh_;
 };
 }
 #endif
