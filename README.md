@@ -22,6 +22,9 @@ teach an assembly system details of a task.
 After compiling the catkin workspace where the package is downloaded to and sourcing your workspace, run
 ``$ roslaunch contact_nodes contact_nodes.launch`` to start the system.
 
+You'll have to call a service with the path of the ``action_nodes_config.yaml`` path. Example:
+``$ rosservice call /sarafun/start_tree "file_path: '/home/<username>/catkin_ws/src/contact_nodes/config/example_slippage.json'"``
+
 ### Launch parameters
 The launch file offers these parameters
 

@@ -1,6 +1,6 @@
 <launch>
   <arg name="debug" default="false"/>
-  <arg name="has_grasp_fail_thres" defaul="1.0"/>
+  <arg name="has_grasp_fail_thres" default="1.0"/>
 
   <param name="/sarafun/bt/tick_period" type="int" value="4000"/> <!-- Tick period in milisseconds -->
   <param name="/sarafun/bt/running" type="bool" value="true"/> <!-- Immediately start the behavior tree -->
